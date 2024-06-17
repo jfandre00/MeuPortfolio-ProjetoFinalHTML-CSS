@@ -1,0 +1,408 @@
+/* professora, acho que consegui deixar o site responsivo, funcionando na tela do celular, nos dois sentidos. pesquisei na internet e descobri o media query, que acabei usando abaixo */
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #319AC0;
+  color: #2D3133;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #16B2EB;
+  border: 2px solid #2D3133;
+}
+
+header img {
+  width: 20vw;
+  max-width: 150px;
+  min-width: 50px;
+  border-radius: 50%;
+  border: 2px solid #2D3133;
+}
+
+header h1 {
+  font-size: 2.5vw;
+  font-weight: 800;
+  margin: 10px;
+  color: #2D3133;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 2px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  background-color: #3F5F6B;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+nav ul li a:hover {
+  background-color: #313C41;
+  color: #3F7F96;
+  text-decoration: underline;
+}
+
+
+main {
+  display: flex;
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#jornada {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 2px solid #2D3133;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+#textinho {
+  padding: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch; 
+}
+
+
+#meiopagina {
+  border: 2px solid #2D3133;
+  background-color: white;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+#jornada img {
+  width: 50%;
+  height: auto;
+  max-width: 300px; 
+}
+
+/* para fazer o media query abaixo precisei pesquisar na internet para acabar com o problema da imagem da Jornada Inspiradora ficar esquisita na tela de celular(depois disso acabei fazendo para todos os outras divs rsrs). Quando acessam do celular a imagem vai para cima da div, e em telas maiores fica do lado mesmo.*/
+
+@media (max-width: 768px) { 
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+  header h1 {
+    font-size: 5.0vw;
+  }
+  header img {
+    margin-bottom: 10px;
+  }
+  header h1, nav ul {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  nav ul {
+    width: 100%;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 5px 8px;
+    
+  }
+  #jornada {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #jornada img {
+    order: -1; /* coloca a imagem acima do texto */
+    margin-bottom: 10px; /* espaço entre a imagem e o texto */
+  }
+
+  main {
+    flex-direction: column;
+  }
+
+  aside {
+    margin-left: 0;
+    margin-top: 20px; /* espaço entre o aside e os elementos acima */
+  }
+}
+
+#meiopagina div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.destaques {
+  flex: 1;
+  margin: 10px;
+  text-align: center;
+}
+
+.destaques img {
+  width: 60%;
+  height: auto;
+  max-width: 150px;
+}
+
+aside {
+  border: 2px solid #2D3133;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: center; 
+  flex: 1; 
+  min-width: 200px; 
+  max-width: 400px; 
+  padding: 10px;
+  background-color: #3F5F6B;
+  color: white;
+  box-sizing: border-box;
+  margin-left: 20px;
+  text-align: center;
+}
+
+aside img {
+  width: 100%;
+  height: auto;
+  max-width: 150px; /* Ajustei o tamanho da imagem do aside */
+}
+
+aside h3, aside p {
+  margin: 0 0 10px;
+}
+
+aside ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+aside ul li {
+  margin: 5px 0;
+}
+
+aside ul li a {
+  color: white;
+  text-decoration: none;
+  background-color: #2D3133;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+aside ul li a:hover {
+  background-color: #16B2EB;
+  color: white;
+}
+
+footer {
+  border: 2px solid #2D3133;
+  text-align: center;
+  padding: 10px;
+  background-color: #3F5F6B;
+  color: white;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+footer ul li {
+  margin: 0 5px;
+}
+
+footer ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+  color: #2D3133;
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px; /* distância do botão ao fundo da página */
+  right: 20px; /* distância do botão à direita da página */
+  background-color: #2AB318; /* usei a extensão colorzilla para pegar a cor exatamente igual a da figura que baixei da internet */
+  width: 60px; /* largura do botão */
+  height: 60px; /* altura do botão */
+  border-radius: 50%; /* arredondando */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* coloca o botão acima de outros elementos, só não entendi direito essa escala de número */
+}
+
+.whatsapp-button img {
+  width: 50%; /* ajusta o tamanho do ícone do WhatsApp */
+}
+
+#sobremim {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  color: #2D3133;
+}
+
+#sobremim h2 {
+  text-align: center;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+#sobremim p {
+  text-align: justify;
+  font-weight: 550;
+}
+
+
+#fotos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.photo-album {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 5px solid #3F5F6B; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.photo-wide {
+  grid-column: span 2;
+}
+
+#tabela {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  border: 2px solid #2D3133;
+}
+
+#tabela h2, #tabela p {
+  text-align: center;
+  color: #2D3133;
+  font-weight: 600;
+}
+
+.tabelacontainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.tabeladecursos {
+  width: 100%;
+  max-width: 800px; /*largura máxima na tela*/
+  border-collapse: collapse;
+  margin-top: 20px auto;
+  text-align: center;
+}
+
+.tabeladecursos th, .tabeladecursos td {
+  border: 2px solid #2D3133;
+  padding: 10px;
+}
+
+.tabeladecursos th {
+  background-color: #3F5F6B;
+  color: white;
+}
+
+.tabeladecursos td a {
+  color: #319AC0;
+  text-decoration: none;
+}
+
+.tabeladecursos td a:hover {
+  text-decoration: underline;
+}
+
+#validador {
+  text-align: center;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 2px solid #2D3133;
+  max-width: 800px; 
+}
+
+#validador h2 {
+  color: #2D3133;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+#validador p {
+  font-size: 1.2em;
+  color: #2D3133;
+  margin-bottom: 20px;
+}
+
+.downloads {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.downloads a {
+  color: #319AC0;
+  text-decoration: none;
+  background-color: #3F5F6B;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 2px solid #2D3133;
+}
+
+.downloads a:hover {
+  background-color: #2D3133;
+  color: #fff;
+}
